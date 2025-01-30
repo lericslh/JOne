@@ -1,68 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DARIC - J One</title>
-    <!-- Link to Tailwind CSS for styling -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Smooth scrolling animation */
+        /* Estilos personalizados para el scroll suave */
         html {
             scroll-behavior: smooth;
         }
-
-        /* Loader animation */
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease-out;
-        }
-
-        #loader.hidden {
-            opacity: 0;
-            display: none; /* Se asegura de que el loader desaparezca completamente */
-        }
-
-        .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid white;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
     </style>
 </head>
-<body class="bg-black text-white font-sans">
-    <!-- Loader -->
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
 
-    <!-- Header Section -->
+<body class="bg-black text-white font-sans">
     <header class="bg-gray-900 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo/Title -->
             <h1 class="text-2xl font-bold">DARIC by J One</h1>
-            <!-- Navigation Menu -->
             <nav>
                 <ul class="flex space-x-4">
                     <li><a href="#about" class="hover:text-gray-400">About</a></li>
@@ -74,31 +29,93 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section id="hero" class="bg-gray-800 text-white py-20 text-center">
             <h2 class="text-4xl font-bold mb-4">DARIC: AI-Powered Risk Detection</h2>
             <p class="text-lg">Enhancing Urban Safety Through Advanced Video Surveillance</p>
-            <!-- Call-to-action button linking to the About section -->
-            <a href="#about" class="mt-6 inline-block bg-white text-black font-bold py-2 px-4 rounded shadow hover:bg-gray-200" aria-label="Learn more about DARIC">Learn More</a>
+            <a href="#about"
+                class="mt-6 inline-block bg-white text-black font-bold py-2 px-4 rounded shadow hover:bg-gray-200"
+                aria-label="Learn more about DARIC">Learn More</a>
+        </section>
+
+        <section id="about" class="py-12">
+            <div class="container mx-auto text-center">
+                <h3 class="text-3xl font-bold mb-6">About DARIC</h3>
+                <p class="text-gray-400 text-lg">DARIC, developed by J One, is an AI-based system designed to recognize
+                    and respond to high-risk situations such as assaults, kidnapping attempts, and general violence.
+                    Our mission is to collaborate with governments to enhance urban safety and crime prevention.</p>
+            </div>
+        </section>
+
+        <section id="services" class="py-12 bg-gray-900">
+            <div class="container mx-auto text-center">
+                <h3 class="text-3xl font-bold mb-6">Features</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-800 p-6 rounded shadow">
+                        <h4 class="text-xl font-bold mb-2">Real-Time Monitoring</h4>
+                        <p class="text-gray-400">DARIC provides continuous video surveillance with instant alerts
+                            for suspicious activities.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded shadow">
+                        <h4 class="text-xl font-bold mb-2">AI-Powered Recognition</h4>
+                        <p class="text-gray-400">Advanced AI algorithms analyze video feeds to detect potential
+                            threats effectively.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded shadow">
+                        <h4 class="text-xl font-bold mb-2">Collaborative Security</h4>
+                        <p class="text-gray-400">Designed to work with government and law enforcement to prevent
+                            and address crimes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-12">
+            <div class="container mx-auto text-center">
+                <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
+                <form action="#" method="POST" class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <input type="text" name="name" placeholder="Your Name"
+                            class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="email" placeholder="Your Email"
+                            class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <textarea name="message" rows="4" placeholder="Your Message"
+                            class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-gray-200">Send
+                        Message</button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <!-- Footer Section -->
     <footer class="bg-gray-900 text-white text-center py-4">
         <p>&copy; 2025 DARIC by J One. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Loader -->
     <script>
-        window.addEventListener("load", () => {
-            const loader = document.getElementById("loader");
-            console.log("Página cargada, ocultando loader"); // Para depuración
-            if (loader) {
-                loader.classList.add("hidden");
-            } else {
-                console.error("No se encontró el elemento con ID 'loader'");
-            }
+        // Script para el scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
+
 </html>
