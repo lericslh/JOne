@@ -4,10 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DARIC - J One</title>
+    <title>J One Corporation</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Estilos personalizados para el scroll suave */
+        /* Estilos para el menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #111; /* Un fondo más oscuro para el menú */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #333; /* Un color de fondo diferente al pasar el mouse */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown button {
+            background-color: transparent; /* Hace que el botón se vea como texto */
+            color: white;
+            padding: 0; /* Elimina el padding predeterminado del botón */
+            border: none; /* Quita el borde del botón */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+            font-size: 1rem; /* Ajusta el tamaño de fuente si es necesario */
+        }
+
+        /* Estilos para el scroll suave */
         html {
             scroll-behavior: smooth;
         }
@@ -17,13 +56,16 @@
 <body class="bg-black text-white font-sans">
     <header class="bg-gray-900 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">DARIC by J One</h1>
+            <h1 class="text-2xl font-bold">J One Corporation</h1>
             <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#about" class="hover:text-gray-400">About</a></li>
-                    <li><a href="#services" class="hover:text-gray-400">Features</a></li>
-                    <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
-                </ul>
+                <div class="dropdown">
+                    <button>Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">About</a>
+                        <a href="#">Features</a>
+                        <a href="#">Contact</a>
+                        </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -32,75 +74,19 @@
         <section id="hero" class="bg-gray-800 text-white py-20 text-center">
             <h2 class="text-4xl font-bold mb-4">DARIC: AI-Powered Risk Detection</h2>
             <p class="text-lg">Enhancing Urban Safety Through Advanced Video Surveillance</p>
-            <a href="#about"
+            <a href="#"
                 class="mt-6 inline-block bg-white text-black font-bold py-2 px-4 rounded shadow hover:bg-gray-200"
                 aria-label="Learn more about DARIC">Learn More</a>
-        </section>
-
-        <section id="about" class="py-12">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">About DARIC</h3>
-                <p class="text-gray-400 text-lg">DARIC, developed by J One, is an AI-based system designed to recognize
-                    and respond to high-risk situations such as assaults, kidnapping attempts, and general violence.
-                    Our mission is to collaborate with governments to enhance urban safety and crime prevention.</p>
-            </div>
-        </section>
-
-        <section id="services" class="py-12 bg-gray-900">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">Features</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-gray-800 p-6 rounded shadow">
-                        <h4 class="text-xl font-bold mb-2">Real-Time Monitoring</h4>
-                        <p class="text-gray-400">DARIC provides continuous video surveillance with instant alerts
-                            for suspicious activities.</p>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded shadow">
-                        <h4 class="text-xl font-bold mb-2">AI-Powered Recognition</h4>
-                        <p class="text-gray-400">Advanced AI algorithms analyze video feeds to detect potential
-                            threats effectively.</p>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded shadow">
-                        <h4 class="text-xl font-bold mb-2">Collaborative Security</h4>
-                        <p class="text-gray-400">Designed to work with government and law enforcement to prevent
-                            and address crimes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-12">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
-                <form action="#" method="POST" class="max-w-lg mx-auto">
-                    <div class="mb-4">
-                        <input type="text" name="name" placeholder="Your Name"
-                            class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded" required>
-                    </div>
-                    <div class="mb-4">
-                        <input type="email" name="email" placeholder="Your Email"
-                            class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded" required>
-                    </div>
-                    <div class="mb-4">
-                        <textarea name="message" rows="4" placeholder="Your Message"
-                            class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded"
-                            required></textarea>
-                    </div>
-                    <button type="submit"
-                        class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-gray-200">Send
-                        Message</button>
-                </form>
-            </div>
         </section>
     </main>
 
     <footer class="bg-gray-900 text-white text-center py-4">
-        <p>&copy; 2025 DARIC by J One. All rights reserved.</p>
+        <p>&copy; 2025 J One Corporation. All rights reserved.</p>
     </footer>
 
     <script>
-        // Script para el scroll suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Script para el scroll suave (si es necesario para los enlaces del menú)
+        document.querySelectorAll('.dropdown-content a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
