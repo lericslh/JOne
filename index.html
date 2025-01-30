@@ -29,7 +29,7 @@
 
         #loader.hidden {
             opacity: 0;
-            visibility: hidden;
+            display: none; /* Se asegura de que el loader desaparezca completamente */
         }
 
         .spinner {
@@ -81,64 +81,6 @@
             <!-- Call-to-action button linking to the About section -->
             <a href="#about" class="mt-6 inline-block bg-white text-black font-bold py-2 px-4 rounded shadow hover:bg-gray-200" aria-label="Learn more about DARIC">Learn More</a>
         </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-12">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">About DARIC</h3>
-                <!-- Description of the company -->
-                <p class="text-gray-400 text-lg">DARIC, developed by J One, is an AI-based system designed to recognize and respond to high-risk situations such as assaults, kidnapping attempts, and general violence. Our mission is to collaborate with governments to enhance urban safety and crime prevention.</p>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="services" class="py-12 bg-gray-900">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">Features</h3>
-                <!-- Features grid with responsive design -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Feature One -->
-                    <div class="bg-gray-800 p-6 rounded shadow">
-                        <h4 class="text-xl font-bold mb-2">Real-Time Monitoring</h4>
-                        <p class="text-gray-400">DARIC provides continuous video surveillance with instant alerts for suspicious activities.</p>
-                    </div>
-                    <!-- Feature Two -->
-                    <div class="bg-gray-800 p-6 rounded shadow">
-                        <h4 class="text-xl font-bold mb-2">AI-Powered Recognition</h4>
-                        <p class="text-gray-400">Advanced AI algorithms analyze video feeds to detect potential threats effectively.</p>
-                    </div>
-                    <!-- Feature Three -->
-                    <div class="bg-gray-800 p-6 rounded shadow">
-                        <h4 class="text-xl font-bold mb-2">Collaborative Security</h4>
-                        <p class="text-gray-400">Designed to work with government and law enforcement to prevent and address crimes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-12">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
-                <!-- Contact form -->
-                <form action="#" method="POST" class="max-w-lg mx-auto">
-                    <!-- Name input field -->
-                    <div class="mb-4">
-                        <input type="text" name="name" placeholder="Your Name" class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded" required>
-                    </div>
-                    <!-- Email input field -->
-                    <div class="mb-4">
-                        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded" required>
-                    </div>
-                    <!-- Message textarea -->
-                    <div class="mb-4">
-                        <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-2 bg-gray-800 text-white border border-gray-700 rounded" required></textarea>
-                    </div>
-                    <!-- Submit button -->
-                    <button type="submit" class="bg-white text-black font-bold py-2 px-4 rounded hover:bg-gray-200">Send Message</button>
-                </form>
-            </div>
-        </section>
     </main>
 
     <!-- Footer Section -->
@@ -148,10 +90,14 @@
 
     <!-- JavaScript for Loader -->
     <script>
-        // Wait until the page is fully loaded
         window.addEventListener("load", () => {
             const loader = document.getElementById("loader");
-            loader.classList.add("hidden");
+            console.log("Página cargada, ocultando loader"); // Para depuración
+            if (loader) {
+                loader.classList.add("hidden");
+            } else {
+                console.error("No se encontró el elemento con ID 'loader'");
+            }
         });
     </script>
 </body>
