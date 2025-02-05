@@ -1,166 +1,298 @@
 <!DOCTYPE html>
-<html lang="es"> 
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J One Corporation</title>
+    <title>DARIC - J One Corporation</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Teko:wght@600;700&display=swap"
+        rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />  </head> 
-<style>
-    /* Estilos para el menú desplegable responsivo */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown button {
-        background-color: transparent;
-        color: white;
-        padding: 0;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-    }
-
-    .dropdown-content {
-        display: none;
-        /* Oculto por defecto */
-        position: absolute;
-        background-color: #111;
-        width: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        opacity: 0;
-        /* Para la animación */
-        transform: translateY(-10px);
-        /* Para la animación */
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        /* Transición suave */
-    }
-
-    .dropdown-content a {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #333;
-    }
-
-    .dropdown:hover .dropdown-content {
-        /* Mostrar al pasar el mouse (opcional) */
-        display: block;
-    }
-
-    /* Estilos para el menú en pantallas pequeñas */
-    @media (max-width: 768px) {
-        .dropdown {
-            display: block;
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        /* Estilos generales y fuentes */
+        html {
+            scroll-behavior: smooth;
+            /* Desplazamiento suave al hacer clic en enlaces internos */
         }
 
-        .dropdown-content {
-            position: static;
-            width: 100%;
-            box-shadow: none;
-            opacity: 1;
-            /* Mostrar siempre en pantallas pequeñas */
-            transform: translateY(0);
-            /* Sin desplazamiento en pantallas pequeñas */
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* Fuente principal para el cuerpo del texto */
+            font-weight: 400;
         }
 
-        .dropdown-content a {
+        h1,
+        h2,
+        h3 {
+            font-family: 'Teko', sans-serif;
+            /* Fuente para encabezados */
+            font-weight: 700;
+        }
+
+        .text-lg,
+        .text-xl {
+            font-family: 'Roboto', sans-serif;
+            /* Fuente para textos grandes */
+            font-weight: 500;
+        }
+
+        /* Animación para títulos */
+        .title-animation {
+            opacity: 0;
+            /* Inicialmente oculto */
+            transform: translateY(20px);
+            /* Ligeramente desplazado hacia abajo */
+        }
+
+        /* Estilos de la sección hero */
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1531746790731-6c087fecd65c?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+            /* Imagen de fondo con gradiente oscuro */
+            min-height: 500px;
+            /* Altura mínima */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Centrado vertical */
+            align-items: center;
+            /* Centrado horizontal */
             text-align: center;
         }
-    }
 
-    /* Estilos para el scroll suave */
-    html {
-        scroll-behavior: smooth;
-    }
-</style>
+        /* Efecto de botón */
+        .btn-daric {
+            transition: all 0.3s ease;
+            /* Transición suave para todas las propiedades */
+        }
 
-<body class="bg-black text-white font-sans">
-    <header class="bg-gray-900 text-white p-4 shadow-md">
+        .btn-daric:hover {
+            transform: translateY(-3px);
+            /* Ligero desplazamiento hacia arriba al pasar el ratón */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            /* Sombra más pronunciada al pasar el ratón */
+            background-color: #172554;
+            /* Color de fondo más oscuro */
+            color: white;
+        }
+
+        /* Estilos para el menú en pantallas pequeñas */
+        @media (max-width: 768px) {
+
+            /* Clases de utilidad de Tailwind CSS para pantallas pequeñas */
+            .md\:block {
+                display: block !important;
+            }
+
+            .md\:flex {
+                display: flex !important;
+            }
+
+            .md\:w-1\/2 {
+                width: 50% !important;
+            }
+
+            .md\:mx-auto {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+
+            /* Estilos específicos para el menú en pantallas pequeñas */
+            nav a {
+                margin: 0.5rem 0;
+                /* Añade espacio vertical entre enlaces */
+                text-align: center;
+            }
+
+            header .container {
+                flex-direction: column;
+                /* Apila los elementos verticalmente */
+                align-items: center;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            nav a {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+    <header class="bg-gray-900 text-white p-4 shadow-md fixed w-full top-0 z-10">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">J One Corporation</h1>
-            <nav>
-                <div class="dropdown">
-                    <button id="dropdownButton">Menu</button>
-                    <div class="dropdown-content" id="dropdownContent">
-                        <a href="#">About</a>
-                        <a href="#">Features</a>
-                        <a href="#">Contact</a>
-                    </div>
-                </div>
+            <h1 class="text-2xl font-bold">
+                <a href="#" class="hover:text-gray-300">J One Corporation</a>
+            </h1>
+            <nav class="flex items-center md:block gap-4">
+                <a href="#about" class="mr-6 hover:text-gray-300">Acerca de</a>
+                <a href="#features" class="mr-6 hover:text-gray-300">Características</a>
+                <a href="#contact" class=" hover:text-gray-300">Contacto</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="bg-gray-800 text-white py-40 text-center bg-cover bg-center"
-            style="background-image: url('ruta/a/tu/imagen.jpg')"> 
-            <h2 class="text-5xl font-bold mb-4">DARIC: AI-Powered Risk Detection</h2>
-            <p class="text-xl">Enhancing Urban Safety Through Advanced Video Surveillance</p>
-            <a href="#"
-                class="mt-6 inline-block bg-white text-black font-bold py-3 px-6 rounded shadow hover:bg-gray-200 text-lg"
-                aria-label="Learn more about DARIC">
-                Learn More <i class="fas fa-arrow-right"></i> </a>
+        <section id="hero" class="py-40">
+            <h2 class="text-5xl font-bold mb-4 title-animation">DARIC: Detección Inteligente de Riesgos y Amenazas</h2>
+            <p class="text-xl mb-8 title-animation">
+                Seguridad Avanzada a través de la Vigilancia por Video con Inteligencia Artificial.
+            </p>
+            <a href="#about"
+                class="mt-6 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 text-lg btn-daric"
+                aria-label="Aprende más sobre DARIC">
+                Descubre DARIC <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </section>
+
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h3 class="text-4xl font-bold text-center mb-12 title-animation">¿Qué es DARIC?</h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1584273956527-4445e85579f8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Análisis de video" class="rounded-lg shadow-lg w-full">
+                    </div>
+                    <div>
+                        <p class="text-lg mb-6">
+                            DARIC (Detección Inteligente de Riesgos y Amenazas Complejas) es una solución de seguridad
+                            revolucionaria que utiliza inteligencia artificial para analizar en tiempo real las
+                            imágenes de cámaras de seguridad.
+                        </p>
+                        <p class="text-lg mb-6">
+                            Nuestro sistema está diseñado para identificar automáticamente comportamientos sospechosos,
+                            armas, y situaciones de riesgo, alertando a las autoridades de manera inmediata y
+                            precisa.
+                        </p>
+                        <ul class="list-disc list-inside text-lg">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Detección en tiempo real</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Precisión superior</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Reducción de falsas alarmas</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Integración sencilla con sistemas
+                                existentes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20">
+            <div class="container mx-auto px-4">
+                <h3 class="text-4xl font-bold text-center mb-12 title-animation">Características Principales</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-brain text-6xl text-blue-500 mb-4"></i>
+                        <h4 class="text-2xl font-bold mb-4">Inteligencia Artificial Avanzada</h4>
+                        <p class="text-lg">
+                            Algoritmos de aprendizaje profundo para un análisis preciso del comportamiento y
+                            detección de amenazas.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-video text-6xl text-blue-500 mb-4"></i>
+                        <h4 class="text-2xl font-bold mb-4">Análisis en Tiempo Real</h4>
+                        <p class="text-lg">
+                            Monitoreo constante y alertas instantáneas para una respuesta rápida ante incidentes.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-shield-alt text-6xl text-blue-500 mb-4"></i>
+                        <h4 class="text-2xl font-bold mb-4">Privacidad y Seguridad</h4>
+                        <p class="text-lg">
+                            Cumplimiento con las normativas de privacidad de datos y protección de la información.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h3 class="text-4xl font-bold text-center mb-12 title-animation">Contáctanos</h3>
+                <div class="md:w-1/2 mx-auto">
+                    <form action="#" method="POST">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 text-lg">Nombre:</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 text-lg">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 text-lg">Mensaje:</label>
+                            <textarea id="message" name="message" rows="5"
+                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 text-lg btn-daric w-full">
+                            Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white text-center py-4">
-        <p>&copy; 2025 J One Corporation. All rights reserved.</p>
+    <footer class="bg-gray-900 text-white text-center py-6">
+        <div class="container mx-auto">
+            <p class="mb-2">&copy; 2025 J One Corporation. Todos los derechos reservados.</p>
+            <div class="mt-2">
+                <a href="#" class="text-gray-400 hover:text-white mx-3" aria-label="Enlace a la página de Facebook"><i
+                        class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3" aria-label="Enlace a la página de Twitter"><i
+                        class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3" aria-label="Enlace a la página de Instagram"><i
+                        class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white mx-3" aria-label="Enlace a la página de LinkedIn"><i
+                        class="fab fa-linkedin-in fa-lg"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script>
-        const dropdownButton = document.getElementById('dropdownButton');
-        const dropdownContent = document.getElementById('dropdownContent');
+        // Animación de títulos
+        const titles = document.querySelectorAll('.title-animation');
 
-        let isMenuOpen = false;
-
-        dropdownButton.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-
-            anime({
-                targets: dropdownContent,
-                translateY: isMenuOpen ? 0 : -10,
-                opacity: isMenuOpen ? 1 : 0,
-                duration: 300,
-                easing: 'easeInOutQuad',
-                begin: function () {
-                    if (isMenuOpen) {
-                        dropdownContent.style.display = "block"; // Mostrar antes de la animación
-                    }
-                },
-                complete: function () {
-                    if (!isMenuOpen) {
-                        dropdownContent.style.display = "none"; // Ocultar después de la animación
-                    }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    anime({
+                        targets: entry.target,
+                        opacity: 1,
+                        translateY: 0,
+                        duration: 1000,
+                        easing: 'easeOutExpo',
+                        delay: entry.target.tagName === 'H3' ? 300 : 0, // Pequeño retraso para los H3
+                    });
+                    observer.unobserve(entry.target);
                 }
             });
+        }, {
+            threshold: 0.1
         });
 
-
-
-        // Script para el scroll suave (si es necesario para los enlaces del menú)
-        document.querySelectorAll('.dropdown-content a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        titles.forEach(title => {
+            observer.observe(title);
         });
     </script>
 </body>
