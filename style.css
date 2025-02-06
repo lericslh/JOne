@@ -36,25 +36,26 @@ h3 {
     transform: translateY(20px);
     /* Ligeramente desplazado hacia abajo */
 }
-
 /* Estilos de la sección hero */
 #hero {
-position: relative;
-overflow: hidden;
- /*Esto hara que se comporte responsivamente, tomando un minimo del 80% de la pantalla*/
- min-height: 80vh;
- }
+    position: relative;
+    overflow: hidden;
+}
+
 .hero-content-wrapper {
+    position: relative; /* Añadimos esto */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+     min-height: 80vh;
 }
 
 .hero-content-wrapper img {
     object-fit: cover;
-    object-position: center; /* O el valor que prefieras */
-    /* El resto de las reglas se quedan igual */
+    object-position: center;
+    /* ... otras reglas ... */
+    /*  QUITAMOS z-index de aquí */
 }
 
 /* Sombra para el texto en la sección hero (se mantiene) */
