@@ -8,164 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Teko:wght@600;700&display=swap"
         rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <style>
-        /* Estilos generales y fuentes */
-        html {
-            scroll-behavior: smooth;
-            /* Desplazamiento suave al hacer clic en enlaces internos */
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            /* Fuente principal para el cuerpo del texto */
-            font-weight: 400;
-            background-color: #011126;
-            /* Fondo principal oscuro */
-            color: white;
-            /* Texto blanco por defecto */
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-family: 'Teko', sans-serif;
-            /* Fuente para encabezados */
-            font-weight: 700;
-        }
-
-        .text-lg,
-        .text-xl {
-            font-family: 'Roboto', sans-serif;
-            /* Fuente para textos grandes */
-            font-weight: 500;
-        }
-
-        /* Animación para títulos */
-        .title-animation {
-            opacity: 0;
-            /* Inicialmente oculto */
-            transform: translateY(20px);
-            /* Ligeramente desplazado hacia abajo */
-        }
-
-        /* Estilos de la sección hero */
-        #hero {
-            background: linear-gradient(rgba(1, 17, 38, 0.7), rgba(1, 17, 38, 0.7)), url('https://images.unsplash.com/photo-1531746790731-6c087fecd65c?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
-            /* Imagen de fondo con gradiente oscuro (ajustado al nuevo color) */
-            min-height: 500px;
-            /* Altura mínima */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            /* Centrado vertical */
-            align-items: center;
-            /* Centrado horizontal */
-            text-align: center;
-        }
-
-        /* Estilo base del botón (importante definirlo aquí) */
-        .btn-daric {
-            background-color: #0B508C;
-            /* Color de fondo del botón */
-            color: white;
-            transition: all 0.3s ease;
-            /* Transición suave */
-            display: inline-block;
-            /* Para que padding, margin, etc. funcionen bien */
-            padding: 0.75rem 2rem;
-            /* Equivalente a py-3 px-8 de Tailwind */
-            border-radius: 0.5rem;
-            /* Equivalente a rounded-lg */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            /* Sombra ligera */
-            font-weight: bold;
-            font-size: 1.125rem;
-            /* Equivalente a text-lg */
-            text-decoration: none;
-            /* Quita subrayado de enlaces */
-        }
-
-        .btn-daric:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            background-color: #011C40;
-            /* Color de fondo más oscuro al pasar el ratón*/
-            color: #5CF2F2;
-            /* Texto celeste al pasar el ratón */
-        }
-
-        /* Estilos para el menú en pantallas pequeñas */
-        @media (max-width: 768px) {
-
-            /* Clases de utilidad de Tailwind CSS para pantallas pequeñas */
-            .md\:block {
-                display: block !important;
-            }
-
-            .md\:flex {
-                display: flex !important;
-            }
-
-            .md\:w-1\/2 {
-                width: 50% !important;
-            }
-
-            .md\:mx-auto {
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            }
-
-            .md\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-            }
-
-            /* Estilos específicos para el menú en pantallas pequeñas */
-            nav a {
-                margin: 0.5rem 0;
-                /* Añade espacio vertical entre enlaces */
-                text-align: center;
-            }
-
-            header .container {
-                flex-direction: column;
-                /* Apila los elementos verticalmente */
-                align-items: center;
-            }
-
-            nav {
-                width: 100%;
-                margin-top: 1rem;
-            }
-
-            nav a {
-                display: block;
-                width: 100%;
-            }
-        }
-
-        /* Estilos para la barra de navegación fija y con efecto blur */
-        header {
-            background-color: rgba(1, 28, 64, 0.9);
-            /* Color sólido inicial, con un poco de transparencia */
-            backdrop-filter: blur(0);
-            /* Inicialmente sin blur */
-            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-            /* Transiciones suaves */
-        }
-
-        header.scrolled {
-            background-color: rgba(1, 28, 64, 0.7);
-            /* Más transparente al hacer scroll */
-            backdrop-filter: blur(10px);
-            /* Aplicamos el blur */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-011126 text-white">
@@ -259,24 +103,24 @@
             <div class="container mx-auto px-4">
                 <h3 class="text-4xl font-bold text-center mb-12 title-animation">Contáctanos</h3>
                 <div class="md:w-1/2 mx-auto">
-                    <form action="#" method="POST">
+                    <form id="contactForm" action="#" method="POST">
                         <div class="mb-6">
                             <label for="name" class="block mb-2 text-lg">Nombre:</label>
                             <input type="text" id="name" name="name"
-                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
+                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <div id="nameError" class="error-message"></div>
                         </div>
                         <div class="mb-6">
                             <label for="email" class="block mb-2 text-lg">Correo Electrónico:</label>
                             <input type="email" id="email" name="email"
-                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required>
+                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <div id="emailError" class="error-message"></div>
                         </div>
                         <div class="mb-6">
                             <label for="message" class="block mb-2 text-lg">Mensaje:</label>
                             <textarea id="message" name="message" rows="5"
-                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                required></textarea>
+                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            <div id="messageError" class="error-message"></div>
                         </div>
                         <button type="submit" class="btn-daric w-full">
                             Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
@@ -291,55 +135,19 @@
         <div class="container mx-auto">
             <p class="mb-2">&copy; 2025 J One Corporation. Todos los derechos reservados.</p>
             <div class="mt-2">
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de Facebook"><i
-                        class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
+                    aria-label="Enlace a la página de Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
                 <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de Twitter"><i
                         class="fab fa-twitter fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de Instagram"><i
-                        class="fab fa-instagram fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de LinkedIn"><i
-                        class="fab fa-linkedin-in fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
+                    aria-label="Enlace a la página de Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
+                    aria-label="Enlace a la página de LinkedIn"><i class="fab fa-linkedin-in fa-lg"></i></a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Animación de títulos
-        const titles = document.querySelectorAll('.title-animation');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    anime({
-                        targets: entry.target,
-                        opacity: 1,
-                        translateY: 0,
-                        duration: 1000,
-                        easing: 'easeOutExpo',
-                        delay: entry.target.tagName === 'H3' ? 300 : 0, // Pequeño retraso para los H3
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        titles.forEach(title => {
-            observer.observe(title);
-        });
-
-        // ---  Código para el efecto de la barra de navegación ---
-        const header = document.querySelector('header');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { // Cambia 50 por la cantidad de píxeles que quieres que se desplace antes de aplicar el efecto
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
