@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DARIC - J One Corporation</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Teko:wght@600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Teko:wght@600;700&display=swap"
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -22,6 +21,10 @@
             font-family: 'Roboto', sans-serif;
             /* Fuente principal para el cuerpo del texto */
             font-weight: 400;
+            background-color: #011126;
+            /* Fondo principal oscuro */
+            color: white;
+            /* Texto blanco por defecto */
         }
 
         h1,
@@ -62,22 +65,35 @@
             text-align: center;
         }
 
-        /* Efecto de botón */
+        /* Estilo base del botón (importante definirlo aquí) */
         .btn-daric {
-            transition: all 0.3s ease;
-            /* Transición suave para todas las propiedades */
             background-color: #0B508C;
             /* Color de fondo del botón */
+            color: white;
+            transition: all 0.3s ease;
+            /* Transición suave */
+            display: inline-block;
+            /* Para que padding, margin, etc. funcionen bien */
+            padding: 0.75rem 2rem;
+            /* Equivalente a py-3 px-8 de Tailwind */
+            border-radius: 0.5rem;
+            /* Equivalente a rounded-lg */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* Sombra ligera */
+            font-weight: bold;
+            font-size: 1.125rem;
+            /* Equivalente a text-lg */
+            text-decoration: none;
+            /* Quita subrayado de enlaces */
         }
 
         .btn-daric:hover {
             transform: translateY(-3px);
-            /* Ligero desplazamiento hacia arriba al pasar el ratón */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            /* Sombra más pronunciada al pasar el ratón */
             background-color: #011C40;
             /* Color de fondo más oscuro al pasar el ratón*/
-            color: white;
+            color: #5CF2F2;
+            /* Texto celeste al pasar el ratón */
         }
 
         /* Estilos para el menú en pantallas pequeñas */
@@ -132,6 +148,23 @@
                 width: 100%;
             }
         }
+
+        /* Estilos para la barra de navegación fija y con efecto blur */
+        header {
+            background-color: rgba(1, 28, 64, 0.9);
+            /* Color sólido inicial, con un poco de transparencia */
+            backdrop-filter: blur(0);
+            /* Inicialmente sin blur */
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            /* Transiciones suaves */
+        }
+
+        header.scrolled {
+            background-color: rgba(1, 28, 64, 0.7);
+            /* Más transparente al hacer scroll */
+            backdrop-filter: blur(10px);
+            /* Aplicamos el blur */
+        }
     </style>
 </head>
 
@@ -140,24 +173,23 @@
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">
                 <a href="#" class="hover:text-5CF2F2">J One Corporation</a>
-                </h1>
+            </h1>
             <nav class="flex items-center md:block gap-4">
                 <a href="#about" class="mr-6 hover:text-5CF2F2">Acerca de</a>
                 <a href="#features" class="mr-6 hover:text-5CF2F2">Características</a>
                 <a href="#contact" class=" hover:text-5CF2F2">Contacto</a>
-                </nav>
+            </nav>
         </div>
     </header>
 
     <main>
         <section id="hero" class="py-40">
-            <h2 class="text-5xl font-bold mb-4 title-animation">DARIC: Detección Inteligente de Riesgos y Amenazas</h2>
+            <h2 class="text-5xl font-bold mb-4 title-animation">DARIC: Detección Inteligente de Riesgos y Amenazas
+            </h2>
             <p class="text-xl mb-8 title-animation">
                 Seguridad Avanzada a través de la Vigilancia por Video con Inteligencia Artificial.
             </p>
-            <a href="#about"
-                class="mt-6 inline-block text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 text-lg btn-daric"
-                aria-label="Aprende más sobre DARIC">
+            <a href="#about" class="btn-daric" aria-label="Aprende más sobre DARIC">
                 Descubre DARIC <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </section>
@@ -187,7 +219,7 @@
                             <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Reducción de falsas alarmas</li>
                             <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Integración sencilla con sistemas
                                 existentes</li>
-                            </ul>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -246,8 +278,7 @@
                                 class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 required></textarea>
                         </div>
-                        <button type="submit"
-                            class=" text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 text-lg btn-daric w-full">
+                        <button type="submit" class="btn-daric w-full">
                             Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
                         </button>
                     </form>
@@ -260,15 +291,15 @@
         <div class="container mx-auto">
             <p class="mb-2">&copy; 2025 J One Corporation. Todos los derechos reservados.</p>
             <div class="mt-2">
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
-                    aria-label="Enlace a la página de Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de Facebook"><i
+                        class="fab fa-facebook-f fa-lg"></i></a>
                 <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de Twitter"><i
                         class="fab fa-twitter fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
-                    aria-label="Enlace a la página de Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
-                    aria-label="Enlace a la página de LinkedIn"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                </div>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de Instagram"><i
+                        class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de LinkedIn"><i
+                        class="fab fa-linkedin-in fa-lg"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -291,4 +322,24 @@
                 }
             });
         }, {
-            threshold
+            threshold: 0.1
+        });
+
+        titles.forEach(title => {
+            observer.observe(title);
+        });
+
+        // ---  Código para el efecto de la barra de navegación ---
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Cambia 50 por la cantidad de píxeles que quieres que se desplace antes de aplicar el efecto
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
