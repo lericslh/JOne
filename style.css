@@ -39,27 +39,26 @@ h3 {
 
 /* Estilos de la sección hero */
 #hero {
-    
     position: relative;
     overflow: hidden;
+    /* Eliminamos min-height de aquí */
+    padding-top: 4rem;    /* Ajusta según necesites */
+    padding-bottom: 4rem; /* Ajusta según necesites */
 }
 
 .hero-content-wrapper {
-    min-height: 500px;
+    /* Eliminamos min-height de aquí */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* Eliminamos background-color si ya no lo necesitas */
 }
 
 .hero-content-wrapper img {
-    object-position: 50% 25%; /*  Ajusta este valor */
-    /*  Otras opciones:
-        object-position: top;
-        object-position: center;
-        object-position: bottom;
-        object-position: 25% 75%; // etc.
-    */
+    object-fit: cover;
+    object-position: center; /* O el valor que prefieras */
+    /* El resto de las reglas se quedan igual */
 }
 
 /* Sombra para el texto en la sección hero (se mantiene) */
