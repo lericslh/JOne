@@ -1,157 +1,47 @@
-<!DOCTYPE html>
-<html lang="es">
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DARIC - J One Corporation</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Teko:wght@600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body class="bg-011126 text-white">
-    <header class="bg-011C40 text-white p-4 shadow-md fixed w-full top-0 z-10">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">
-                <a href="#" class="hover:text-5CF2F2">J One Corporation</a>
-            </h1>
-            <nav class="flex items-center md:block gap-4">
-                <a href="#about" class="mr-6 hover:text-5CF2F2">Acerca de</a>
-                <a href="#features" class="mr-6 hover:text-5CF2F2">Características</a>
-                <a href="#contact" class=" hover:text-5CF2F2">Contacto</a>
-            </nav>
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white text-black flex flex-col items-center p-8 font-sans">
+      <nav className="w-full flex justify-between items-center p-6 max-w-6xl">
+        <h1 className="text-xl font-bold">J One</h1>
+        <div className="flex space-x-6 text-gray-600">
+          <a href="#" className="hover:text-black">Services</a>
+          <a href="#" className="hover:text-black">Investigations</a>
+          <a href="#" className="hover:text-black">Products</a>
         </div>
-    </header>
-
-    <main>
-        <section id="hero" class="py-40">  <div class="hero-content-wrapper relative">
-        <img src="DARIC1.jpeg" alt="Vigilancia de seguridad"
-            class="w-full object-cover absolute inset-0">
-
-        <div class="relative z-10 text-center">
-            <h2 class="text-5xl font-bold mb-4 title-animation pt-10 md:pt-0">DARIC: Detección Inteligente de Riesgos y Amenazas</h2>
-            <p class="text-xl mb-8 title-animation pb-5 md:pb-0">
-                Seguridad Avanzada a través de la Vigilancia por Video con Inteligencia Artificial.
-            </p>
-            <a href="#about" class="btn-daric" aria-label="Aprende más sobre DARIC">
-                Descubre DARIC <i class="fas fa-arrow-right ml-2"></i>
-            </a>
+        <Button className="bg-gray-200 text-black px-4 py-2 rounded-lg">Contact</Button>
+      </nav>
+      <div className="flex flex-col items-center text-center mt-16 max-w-4xl">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-5xl font-bold mb-4"
+        >
+          Jared, we welcome you to the future.
+        </motion.h1>
+        <p className="text-lg text-gray-500 mb-8">We transform the world</p>
+        <Button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg">Learn more</Button>
+      </div>
+      <div className="flex justify-between items-center max-w-4xl w-full mt-12 text-gray-600">
+        <div className="flex items-center space-x-2">
+          <span>🇲🇽</span>
+          <div>
+            <p className="font-bold">Mexican StartUp</p>
+            <p className="text-sm">Driving Mexico to be a technological power.</p>
+          </div>
         </div>
+        <div className="flex items-center space-x-2">
+          <span>🔄</span>
+          <div>
+            <p className="font-bold">Innovation only</p>
+            <p className="text-sm">We are the ones who update the technology.</p>
+          </div>
+        </div>
+      </div>
+      <footer className="mt-12 text-gray-500">© All rights reserved by <span className="font-bold">J One Corporation</span></footer>
     </div>
-</section>
-        <section id="about" class="py-20 bg-011C40">
-            <div class="container mx-auto px-4">
-                <h3 class="text-4xl font-bold text-center mb-12 title-animation">¿Qué es DARIC?</h3>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1584273956527-4445e85579f8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Análisis de video" class="rounded-lg shadow-lg w-full">
-                    </div>
-                    <div>
-                        <p class="text-lg mb-6">
-                            DARIC (Detección Inteligente de Riesgos y Amenazas Complejas) es una solución de seguridad
-                            revolucionaria que utiliza inteligencia artificial para analizar en tiempo real las
-                            imágenes de cámaras de seguridad.
-                        </p>
-                        <p class="text-lg mb-6">
-                            Nuestro sistema está diseñado para identificar automáticamente comportamientos sospechosos,
-                            armas, y situaciones de riesgo, alertando a las autoridades de manera inmediata y
-                            precisa.
-                        </p>
-                        <ul class="list-disc list-inside text-lg">
-                            <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Detección en tiempo real</li>
-                            <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Precisión superior</li>
-                            <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Reducción de falsas alarmas</li>
-                            <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Integración sencilla con sistemas
-                                existentes</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="py-20">
-            <div class="container mx-auto px-4">
-                <h3 class="text-4xl font-bold text-center mb-12 title-animation">Características Principales</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <i class="fas fa-brain text-6xl text-0B508C mb-4"></i>
-                        <h4 class="text-2xl font-bold mb-4">Inteligencia Artificial Avanzada</h4>
-                        <p class="text-lg">
-                            Algoritmos de aprendizaje profundo para un análisis preciso del comportamiento y
-                            detección de amenazas.
-                        </p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-video text-6xl text-0B508C mb-4"></i>
-                        <h4 class="text-2xl font-bold mb-4">Análisis en Tiempo Real</h4>
-                        <p class="text-lg">
-                            Monitoreo constante y alertas instantáneas para una respuesta rápida ante incidentes.
-                        </p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-shield-alt text-6xl text-0B508C mb-4"></i>
-                        <h4 class="text-2xl font-bold mb-4">Privacidad y Seguridad</h4>
-                        <p class="text-lg">
-                            Cumplimiento con las normativas de privacidad de datos y protección de la información.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 bg-011C40">
-            <div class="container mx-auto px-4">
-                <h3 class="text-4xl font-bold text-center mb-12 title-animation">Contáctanos</h3>
-                <div class="md:w-1/2 mx-auto">
-                    <form id="contactForm" action="#" method="POST">
-                        <div class="mb-6">
-                            <label for="name" class="block mb-2 text-lg">Nombre:</label>
-                            <input type="text" id="name" name="name"
-                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <div id="nameError" class="error-message"></div>
-                        </div>
-                        <div class="mb-6">
-                            <label for="email" class="block mb-2 text-lg">Correo Electrónico:</label>
-                            <input type="email" id="email" name="email"
-                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <div id="emailError" class="error-message"></div>
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block mb-2 text-lg">Mensaje:</label>
-                            <textarea id="message" name="message" rows="5"
-                                class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                            <div id="messageError" class="error-message"></div>
-                        </div>
-                        <button type="submit" class="btn-daric w-full">
-                            Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-011C40 text-white text-center py-6">
-        <div class="container mx-auto">
-            <p class="mb-2">&copy; 2025 J One Corporation. Todos los derechos reservados.</p>
-            <div class="mt-2">
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
-                    aria-label="Enlace a la página de Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de Twitter"><i
-                        class="fab fa-twitter fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
-                    aria-label="Enlace a la página de Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
-                    aria-label="Enlace a la página de LinkedIn"><i class="fab fa-linkedin-in fa-lg"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+  );
+}
