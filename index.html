@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DARIC - J One Corporation</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Teko:wght@600;700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Teko:wght@600;700&display=swap"
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -48,8 +49,8 @@
 
         /* Estilos de la sección hero */
         #hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1531746790731-6c087fecd65c?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
-            /* Imagen de fondo con gradiente oscuro */
+            background: linear-gradient(rgba(1, 17, 38, 0.7), rgba(1, 17, 38, 0.7)), url('https://images.unsplash.com/photo-1531746790731-6c087fecd65c?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+            /* Imagen de fondo con gradiente oscuro (ajustado al nuevo color) */
             min-height: 500px;
             /* Altura mínima */
             display: flex;
@@ -65,6 +66,8 @@
         .btn-daric {
             transition: all 0.3s ease;
             /* Transición suave para todas las propiedades */
+            background-color: #0B508C;
+            /* Color de fondo del botón */
         }
 
         .btn-daric:hover {
@@ -72,8 +75,8 @@
             /* Ligero desplazamiento hacia arriba al pasar el ratón */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             /* Sombra más pronunciada al pasar el ratón */
-            background-color: #172554;
-            /* Color de fondo más oscuro */
+            background-color: #011C40;
+            /* Color de fondo más oscuro al pasar el ratón*/
             color: white;
         }
 
@@ -132,17 +135,17 @@
     </style>
 </head>
 
-<body class="bg-black text-white">
-    <header class="bg-gray-900 text-white p-4 shadow-md fixed w-full top-0 z-10">
+<body class="bg-011126 text-white">
+    <header class="bg-011C40 text-white p-4 shadow-md fixed w-full top-0 z-10">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">
-                <a href="#" class="hover:text-gray-300">J One Corporation</a>
-            </h1>
+                <a href="#" class="hover:text-5CF2F2">J One Corporation</a>
+                </h1>
             <nav class="flex items-center md:block gap-4">
-                <a href="#about" class="mr-6 hover:text-gray-300">Acerca de</a>
-                <a href="#features" class="mr-6 hover:text-gray-300">Características</a>
-                <a href="#contact" class=" hover:text-gray-300">Contacto</a>
-            </nav>
+                <a href="#about" class="mr-6 hover:text-5CF2F2">Acerca de</a>
+                <a href="#features" class="mr-6 hover:text-5CF2F2">Características</a>
+                <a href="#contact" class=" hover:text-5CF2F2">Contacto</a>
+                </nav>
         </div>
     </header>
 
@@ -153,13 +156,13 @@
                 Seguridad Avanzada a través de la Vigilancia por Video con Inteligencia Artificial.
             </p>
             <a href="#about"
-                class="mt-6 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 text-lg btn-daric"
+                class="mt-6 inline-block text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 text-lg btn-daric"
                 aria-label="Aprende más sobre DARIC">
                 Descubre DARIC <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </section>
 
-        <section id="about" class="py-20 bg-gray-800">
+        <section id="about" class="py-20 bg-011C40">
             <div class="container mx-auto px-4">
                 <h3 class="text-4xl font-bold text-center mb-12 title-animation">¿Qué es DARIC?</h3>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -179,12 +182,12 @@
                             precisa.
                         </p>
                         <ul class="list-disc list-inside text-lg">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Detección en tiempo real</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Precisión superior</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Reducción de falsas alarmas</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Integración sencilla con sistemas
+                            <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Detección en tiempo real</li>
+                            <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Precisión superior</li>
+                            <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Reducción de falsas alarmas</li>
+                            <li><i class="fas fa-check text-5CF2F2 mr-2"></i> Integración sencilla con sistemas
                                 existentes</li>
-                        </ul>
+                            </ul>
                     </div>
                 </div>
             </div>
@@ -195,7 +198,7 @@
                 <h3 class="text-4xl font-bold text-center mb-12 title-animation">Características Principales</h3>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="text-center">
-                        <i class="fas fa-brain text-6xl text-blue-500 mb-4"></i>
+                        <i class="fas fa-brain text-6xl text-0B508C mb-4"></i>
                         <h4 class="text-2xl font-bold mb-4">Inteligencia Artificial Avanzada</h4>
                         <p class="text-lg">
                             Algoritmos de aprendizaje profundo para un análisis preciso del comportamiento y
@@ -203,14 +206,14 @@
                         </p>
                     </div>
                     <div class="text-center">
-                        <i class="fas fa-video text-6xl text-blue-500 mb-4"></i>
+                        <i class="fas fa-video text-6xl text-0B508C mb-4"></i>
                         <h4 class="text-2xl font-bold mb-4">Análisis en Tiempo Real</h4>
                         <p class="text-lg">
                             Monitoreo constante y alertas instantáneas para una respuesta rápida ante incidentes.
                         </p>
                     </div>
                     <div class="text-center">
-                        <i class="fas fa-shield-alt text-6xl text-blue-500 mb-4"></i>
+                        <i class="fas fa-shield-alt text-6xl text-0B508C mb-4"></i>
                         <h4 class="text-2xl font-bold mb-4">Privacidad y Seguridad</h4>
                         <p class="text-lg">
                             Cumplimiento con las normativas de privacidad de datos y protección de la información.
@@ -220,7 +223,7 @@
             </div>
         </section>
 
-        <section id="contact" class="py-20 bg-gray-800">
+        <section id="contact" class="py-20 bg-011C40">
             <div class="container mx-auto px-4">
                 <h3 class="text-4xl font-bold text-center mb-12 title-animation">Contáctanos</h3>
                 <div class="md:w-1/2 mx-auto">
@@ -244,7 +247,7 @@
                                 required></textarea>
                         </div>
                         <button type="submit"
-                            class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 text-lg btn-daric w-full">
+                            class=" text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 text-lg btn-daric w-full">
                             Enviar Mensaje <i class="fas fa-paper-plane ml-2"></i>
                         </button>
                     </form>
@@ -253,19 +256,19 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white text-center py-6">
+    <footer class="bg-011C40 text-white text-center py-6">
         <div class="container mx-auto">
             <p class="mb-2">&copy; 2025 J One Corporation. Todos los derechos reservados.</p>
             <div class="mt-2">
-                <a href="#" class="text-gray-400 hover:text-white mx-3" aria-label="Enlace a la página de Facebook"><i
-                        class="fab fa-facebook-f fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white mx-3" aria-label="Enlace a la página de Twitter"><i
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
+                    aria-label="Enlace a la página de Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3" aria-label="Enlace a la página de Twitter"><i
                         class="fab fa-twitter fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white mx-3" aria-label="Enlace a la página de Instagram"><i
-                        class="fab fa-instagram fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white mx-3" aria-label="Enlace a la página de LinkedIn"><i
-                        class="fab fa-linkedin-in fa-lg"></i></a>
-            </div>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
+                    aria-label="Enlace a la página de Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-5CF2F2 mx-3"
+                    aria-label="Enlace a la página de LinkedIn"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
         </div>
     </footer>
 
@@ -288,13 +291,4 @@
                 }
             });
         }, {
-            threshold: 0.1
-        });
-
-        titles.forEach(title => {
-            observer.observe(title);
-        });
-    </script>
-</body>
-
-</html>
+            threshold
