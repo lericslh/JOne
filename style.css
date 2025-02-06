@@ -39,20 +39,16 @@ h3 {
 
 /* Estilos de la sección hero */
 #hero {
-    position: relative;
-    overflow: hidden;
-    /* Eliminamos min-height de aquí */
-    padding-top: 4rem;    /* Ajusta según necesites */
-    padding-bottom: 4rem; /* Ajusta según necesites */
-}
-
+position: relative;
+overflow: hidden;
+ /*Esto hara que se comporte responsivamente, tomando un minimo del 80% de la pantalla*/
+ min-height: 80vh;
+ }
 .hero-content-wrapper {
-    /* Eliminamos min-height de aquí */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Eliminamos background-color si ya no lo necesitas */
 }
 
 .hero-content-wrapper img {
