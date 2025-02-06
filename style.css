@@ -39,17 +39,43 @@ h3 {
 
 /* Estilos de la sección hero */
 #hero {
-    background: linear-gradient(rgba(1, 17, 38, 0.7), rgba(1, 17, 38, 0.7)), url('https://images.unsplash.com/photo-1531746790731-6c087fecd65c?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
-    /* Imagen de fondo con gradiente oscuro (ajustado al nuevo color) */
+    /* background: linear-gradient(rgba(1, 17, 38, 0.85), rgba(1, 17, 38, 0.85)), url('https://images.unsplash.com/photo-1531746790731-6c087fecd65c?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat; */
+    /* Imagen de fondo con gradiente oscuro (ajustado) */
     min-height: 500px;
     /* Altura mínima */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    /* Centrado vertical */
+    /* align-items: center; */
+    /* Centrado horizontal */
+    /* text-align: center; */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content-wrapper {
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Centrado vertical */
     align-items: center;
-    /* Centrado horizontal */
-    text-align: center;
+}
+
+.hero-content-wrapper img {
+    object-position: 50% 25%; /*  Ajusta este valor */
+    /*  Otras opciones:
+        object-position: top;
+        object-position: center;
+        object-position: bottom;
+        object-position: 25% 75%; // etc.
+    */
+}
+
+/* Sombra para el texto en la sección hero (se mantiene) */
+#hero h2,
+#hero p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Estilo base del botón (importante definirlo aquí) */
